@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      background-color: rgb(25, 25, 25);
+      font-family: comic sans ms;
+    }
+  </style>
+<style>
+  .big-button-fixed {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 150px; /* Make the text inside bigger too */
+  }
+  .big-text {
+  font-size: 30px;
+  }
+  .big-text-header {
+  font-size: 50px;
+  }
+</style>
+  <meta charset="UTF-8">
+  <title>Click Counter</title>
+ 
+</head>
+<body>
+  <a href="index.html">
+    <button style="background-color: black; color: white; height: 60px; font-size: 20px; padding: 10px 20px; cursor: pointer; font-family: comic sans ms">go back to main side</button>
+  </a>
+
+  <h1 style="color: white" class="big-text-header">Click Counter</h1>
+
+  <button onclick="increaseCount()"; style="color: white" class="big-button-fixed">🍪</button>
+
+  <p style="color: white" class="big-text">You've clicked <span id="counter">0</span> times.</p>
+
+  <p style="color: white" class="big-text">By olopolo337 (olek_trolek on discord)</p>
+  <script>
+    let count = 0;
+
+    function increaseCount() {
+      count++;
+      document.getElementById('counter').textContent = count;
+    }
+  </script>
+
+</body>
+</html>
