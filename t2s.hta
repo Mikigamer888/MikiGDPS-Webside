@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prosty syntezator mowy</title>
+<HTA:Application
+    ID="TTSApp"
+    ApplicationName="TTSApp"
+    SingleInstance="yes"
+    Windowstate="normal"
+    Border="thin"
+    Borderstyle="normal"
+    Caption="yes"
+    ShowInTaskbar="yes"
+    SysMenu="yes"
+/>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+textarea {
+    width: 90%;
+    max-width: 500px;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    resize: vertical; /* Pozwól u¿ytkownikowi zmieniaæ wysokoœæ */
+}
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #45a049;
+}
+</style>
+<script language="VBScript">
+Sub SpeakText()
+    Dim mowa
+    Set mowa = CreateObject("SAPI.SpVoice")
+    ' Pobierz wartoœæ z textarea o ID "userInput"
+    mowa.Speak document.getElementById("userInput").value
+    Set mowa = Nothing
+End Sub
+</script>
+</head>
+<body>
+    <h2>Wpisz tekst do odczytania:</h2>
+    <textarea id="userInput"></textarea><br>
+    <button onclick="SpeakText()">Mów!</button>
+</body>
+</html>
