@@ -34,7 +34,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 15px;
-    resize: vertical; /* Pozwól u¿ytkownikowi zmieniaæ wysokoœæ */
+    resize: vertical; /* PozwÃ³l uÂ¿ytkownikowi zmieniaÃ¦ wysokoÅ“Ã¦ */
 }
 button {
     padding: 12px 25px;
@@ -54,15 +54,16 @@ button:hover {
 Sub SpeakText()
     Dim mowa
     Set mowa = CreateObject("SAPI.SpVoice")
-    ' Pobierz wartoœæ z textarea o ID "userInput"
+    ' Pobierz wartoÅ“Ã¦ z textarea o ID "userInput"
     mowa.Speak document.getElementById("userInput").value
     Set mowa = Nothing
 End Sub
 </script>
 </head>
 <body>
-    <h2>Wpisz tekst do odczytania:</h2>
+    <h2>Enter text for ur pc to say:</h2>
     <textarea id="userInput"></textarea><br>
-    <button onclick="SpeakText()">Mów!</button>
+    <button onclick="SpeakText()">SAY IT OUT LOUD!</button>
 </body>
+
 </html>
